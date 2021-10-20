@@ -9,8 +9,8 @@ import { NavComponent } from './components/shared/nav/nav.component';
 import { CartComponent } from './components/shopping-cart/cart/cart.component';
 import { FiltersComponent } from './components/shopping-cart/filters/filters.component';
 import { ProductListComponent } from './components/shopping-cart/product-list/product-list.component';
-import { MessengerComponent } from './services/messenger/messenger.component';
-import { ProductComponent } from './services/product/product.component';
+import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
+import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,9 @@ import { ProductComponent } from './services/product/product.component';
     CartComponent,
     FiltersComponent,
     ProductListComponent,
-    MessengerComponent,
-    ProductComponent
+    CartItemComponent,
+    ProductItemComponent,
+  
   ],
   imports: [
     BrowserModule,
