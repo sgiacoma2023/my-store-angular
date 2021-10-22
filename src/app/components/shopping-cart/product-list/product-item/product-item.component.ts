@@ -5,7 +5,7 @@ import { MessengerService } from 'src/app/services/messenger.service'
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+  styleUrls: ['./product-item.component.scss']
 })
 
 export class ProductItemComponent implements OnInit {
