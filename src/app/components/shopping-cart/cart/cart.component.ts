@@ -18,11 +18,11 @@ export class CartComponent implements OnInit {
     //{ id: 4, productId: 4, productName: 'test4', qty: 2, price: 35}
   ];
 
-  cartTotal = 0
+  cartTotal = 0;
   constructor(private  msg:  MessengerService) { }
 
   ngOnInit() {
-    
+    console.log(this.cartTotal);
     this.msg.getMsg().pipe(
       filter((event): event is Product => event instanceof Product)
     ).subscribe(event => {
@@ -56,5 +56,6 @@ export class CartComponent implements OnInit {
     this.cartItems.forEach(item =>  {
       this.cartTotal += (item.qty * item.price)
     })
+    console.log(this.cartTotal);
   }
 }
