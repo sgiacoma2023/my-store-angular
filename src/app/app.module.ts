@@ -14,6 +14,7 @@ import { ProductItemComponent } from './components/shopping-cart/product-list/pr
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/shared/home/home.component';
+import { ConfirmComponent } from './components/checkout/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HomeComponent } from './components/shared/home/home.component';
     ShoppingCartComponent,
     CheckoutComponent,
     HomeComponent,
+    ConfirmComponent,
   
   ],
   imports: [

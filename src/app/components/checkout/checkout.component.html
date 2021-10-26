@@ -24,18 +24,7 @@
         </div>
       </div>
 
-      <div class="mb-3">
-        <label for="username">Username</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">@</span>
-          </div>
-          <input type="text" class="form-control" id="username" placeholder="Username" required>
-          <div class="invalid-feedback" style="width: 100%;">
-            Your username is required.
-          </div>
-        </div>
-      </div>
+      
 
       <div class="mb-3">
         <label for="email">Email <span class="text-muted">(Optional)</span></label>
@@ -152,7 +141,7 @@
                 </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <button><a class="py-2 text-dark text-decoration-none" routerLink="/confirm" routerLinkActive="active">Confirm Order</a></button>
           </form>
         </div>
     </div>
