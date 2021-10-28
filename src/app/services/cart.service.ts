@@ -17,7 +17,11 @@ export class CartService {
 
   cartTotal = 0;
   constructor(private  msg:  MessengerService) { }
-
+  getCartItems(){
+    console.log("Calling get Cart Items");
+    console.log(this.cartItems);
+    return this.cartItems;
+  }
 
   addProductToCart(product: Product) {
     
@@ -45,5 +49,6 @@ export class CartService {
       this.cartTotal += (item.qty * item.price)
     })
     console.log(this.cartTotal);
+    console.log(this.cartItems);
   }
 }

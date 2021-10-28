@@ -4,6 +4,7 @@ import { MessengerService } from 'src/app/services/messenger.service'
 import { Product } from 'src/app/models/product'
 import { filter, map } from 'rxjs/operators';
 import { CartItem } from 'src/app/models/cart-item';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -19,43 +20,21 @@ export class CartComponent implements OnInit {
   ];
 
   cartTotal = 0;
-  constructor(private  msg:  MessengerService) { }
+  constructor(private  msg:  MessengerService, private cartService: CartService) { }
 
   ngOnInit() {
-    console.log(this.cartTotal);
+    this.cartItems = this.cartService.getCartItems();
+    
+    console.log(this.cartItems);
     this.msg.getMsg().pipe(
       filter((event): event is Product => event instanceof Product)
     ).subscribe(event => {
       
-      this.addProductToCart(event)
+      this.cartService.addProductToCart(event);
+      this.cartItems = this.cartService.getCartItems();
+       
     });
   }
 
-  addProductToCart(product: Product) {
-    
-    let productExists  = false
-
-    for(let i in this.cartItems){
-      if(this.cartItems[i].productId === product.id) {
-        this.cartItems[i].qty++
-        productExists = true
-        break;
-      }
-    }
-    if(!productExists){
-      this.cartItems.push({
-        id: product.id,
-        productId: product.id,
-        productName: product.name, 
-        qty: 1,
-        price: product.price
-      })
-    }
-
-    this.cartTotal = 0
-    this.cartItems.forEach(item =>  {
-      this.cartTotal += (item.qty * item.price)
-    })
-    console.log(this.cartTotal);
-  }
+  
 }
