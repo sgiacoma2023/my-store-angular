@@ -18,7 +18,6 @@ export class ProductService {
   constructor() { }
 
   getProducts(): Product[]{
-     //TODO: populate products from API?
     return this.products
   }
 }
