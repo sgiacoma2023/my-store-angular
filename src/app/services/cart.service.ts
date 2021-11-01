@@ -18,9 +18,11 @@ export class CartService {
   cartTotal = 0;
   constructor(private  msg:  MessengerService) { }
   getCartItems(){
-    console.log("Calling get Cart Items");
-    console.log(this.cartItems);
     return this.cartItems;
+  }
+
+  getCartTotal(){
+    return this.cartTotal;
   }
 
   addProductToCart(product: Product) {
@@ -42,13 +44,14 @@ export class CartService {
         qty: 1,
         price: product.price
       })
+
+      this.cartTotal = 0
+      this.cartItems.forEach(item =>  {
+        this.cartTotal += (item.qty * item.price)
+      })
     }
 
-    this.cartTotal = 0
-    this.cartItems.forEach(item =>  {
-      this.cartTotal += (item.qty * item.price)
-    })
-    console.log(this.cartTotal);
-    console.log(this.cartItems);
+    
+    
   }
 }

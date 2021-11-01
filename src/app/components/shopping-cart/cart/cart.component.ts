@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.cartItems = this.cartService.getCartItems();
+    this.cartTotal = this.cartService.getCartTotal();
     
     console.log(this.cartItems);
     this.msg.getMsg().pipe(
@@ -32,6 +33,8 @@ export class CartComponent implements OnInit {
       
       this.cartService.addProductToCart(event);
       this.cartItems = this.cartService.getCartItems();
+      this.cartTotal = this.cartService.getCartTotal();
+      console.log(this.cartTotal);
        
     });
   }
