@@ -4,7 +4,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ConfirmComponent } from './components/checkout/confirm/confirm.component';
 import { HomeComponent } from './components/shared/home/home.component';
 
-const routes: Routes = [
+// add routes to other pages here
+const routes: Routes = [ 
   { path:'', component: HomeComponent},
   { path: 'checkout', component: CheckoutComponent },
   { path: 'confirm',  component: ConfirmComponent}

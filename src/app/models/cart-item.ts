@@ -7,7 +7,7 @@ export class CartItem {
     qty: number;
     price: number;
 
-
+// product info
 constructor(id: number, product: Product, qty = 1){
     this.id = id;
     this.productId = product.id;

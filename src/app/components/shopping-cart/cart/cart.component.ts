@@ -32,7 +32,9 @@ export class CartComponent implements OnInit {
     ).subscribe(event => {
       
       this.cartService.addProductToCart(event);
+      // pull cart items
       this.cartItems = this.cartService.getCartItems();
+      // get cart total to display in cart
       this.cartTotal = this.cartService.getCartTotal();
       console.log(this.cartTotal);
        

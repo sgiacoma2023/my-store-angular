@@ -17,10 +17,12 @@ export class CartService {
 
   cartTotal = 0;
   constructor(private  msg:  MessengerService) { }
-  getCartItems(){
+  // bring in cart items to the cart
+  getCartItems(){ 
     return this.cartItems;
   }
 
+  // get the cart total 
   getCartTotal(){
     return this.cartTotal;
   }
@@ -45,6 +47,7 @@ export class CartService {
         price: product.price
       })
 
+      // calculate cart total
       this.cartTotal = 0
       this.cartItems.forEach(item =>  {
         this.cartTotal += (item.qty * item.price)
